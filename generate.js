@@ -104,7 +104,7 @@ const handler = async (req, res) => {
   // Creamos la dirección (URL) a la que haremos la petición a Google Gemini.
   // Incluye el modelo específico que queremos usar ('gemini-1.5-flash-latest')
   // y la API Key como parámetro al final (`?key=${apiKey}`).
-  const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+  const apiUrl = `https://proyectointel4-cr7rnjq7e-rody023s-projects.vercel.app/?key=${apiKey}`;
 
   // --- 5. Llamar a la API de Google Gemini ---
   // Usamos un bloque 'try...catch' para manejar posibles errores durante la llamada a la API.
