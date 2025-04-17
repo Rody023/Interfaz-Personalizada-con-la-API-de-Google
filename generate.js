@@ -155,6 +155,32 @@ const handler = async (req, res) => {
     // Enviamos la respuesta de error (código y mensaje) al frontend.
     return res.status(statusCode).json({ error: errorMessage });
   }
+
+  async function executeQuery() {
+    const prompt = promptInput.value.trim();
+    if (!prompt) {
+        showNotification('Por favor, escribe una consulta.');
+        return;
+    }
+    showLoading();
+    resultBox.textContent = 'Procesando...';
+    copyBtn.disabled = true;
+    saveBtn.disabled = true;
+
+    try {
+        const backendUrl = 'https://proyectointel4-cr7rnjq7e-rody023s-projects.vercel.app/'; // Reemplaza con tu URL de Vercel
+        const response = await fetch(backendUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt }),
+        });
+
+        // ... el resto del código de manejo de la respuesta
+    } catch (error) {
+        // ... manejo de errores
+    } finally {
+        hideLoading();
+    
 };
 
 // ==========================================
